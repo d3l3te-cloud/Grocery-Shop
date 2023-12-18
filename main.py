@@ -6,3 +6,6 @@ print(''' instructions
 2. press 2 for selling
 3. press 3 for display
 4. press 4 to exit the system''') 
+while true:
+  x=int(input('enter command:'))
+  
