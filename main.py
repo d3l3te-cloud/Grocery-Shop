@@ -1,6 +1,3 @@
-print('Hello World')
-print('why are you gay') 
-print('mai nhi hu') 
 D={}
 print(''' instructions
 1. press 1 for purchase
