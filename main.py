@@ -24,7 +24,7 @@ while True:
             print ("Amount left in the store == ", bdgt1)
             c+= qunty
             f-=b
-            T[itm]= {"quanity":c,"amount" : f}
+            T[itm]= {"quanity":c,"Profit/Loss" : f}
             print("Item purchased")
         else:
             print("Item not found")
@@ -38,7 +38,7 @@ while True:
             print ("Amount left in the store == ", bdgt1)
             c-= qunty
             f+=b
-            T[itm]= {"quanity":c,"amount" : f}
+            T[itm]= {"quanity":c,"Profit/Loss" : f}
             print("Item sold")
         else:
             print("Item not found")
