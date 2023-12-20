@@ -1,12 +1,3 @@
-"""D={}
-print(''' instructions
-1. press 1 for purchase
-2. press 2 for selling
-3. press 3 for display
-4. press 4 to exit the system''') 
-while true:
-  x=int(input('enter command:'))
-  if x==1:"""
 T = {}
 bdgt= int(input("enter the budget of the store(NUMERIC INPUT):"))
 bdgt1=bdgt
