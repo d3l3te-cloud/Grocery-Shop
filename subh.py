@@ -1,70 +1,76 @@
-T={}
-a=int(input('Enter what to do'))
-price=0
-TOM=1000
-POT=1000
-MOS=109
-if a=='CODE':
-    print('TOMATO :1 Price:10rs/kg'
-           'POTATO :2 Price:20RS/kg'
-           'Mosturizer:3 Price:100/unit')
+T = {}
+#Creating the item code in loop
+a=10000
+x=1
+
 while True:
-    
-    #for billing
-    
-    if a==1:
-        total=0
+    choice= int(input(" 1 for administration, 2 for billing, 3 to close store:"))
+    if choice == 1:
         while True:
-            
-            inp=int(input('press 1 for billing/continue billing , 2 for showing bill , 3 for exiting to main menu'))
-            if inp==1:
-                b=int(input('Enter Item CODE'))
-                qty=int(input('Enter qty in unit'))
-                if b==1:
-                    price=10
-                    TOM=TOM-qty
-                if b==2:
-                    price=20
-                    POT=POT-qty
-                if b==3:
-                    price=100
-                    MOS=MOS-qty
-
-                z=(qty*price)
-                total=total+z
-            if inp==2:
-                print(total)
-            if inp==3:
-                a=int(input('Enter what to do'))
-                total=0
-                break
-                
-            
-
-
-            
-            
-
-    if a==2:
-        print('Welcome to administrator ! Choose Service-')
-        adm=int(input('press 1 to show stock // press 2 to restock '))
-        if adm==1:
-            print('TOMATO: ',TOM,'POTATO: ',POT,'MOSTURIZER: ',MOS)
-        if adm==2:
-            while True:
-                code=int(input('ITEM code(Press OK to administrator setting'))
-                refill=int(input('enter refill amount'))
-                if code==1:
-                    TOM=TOM+refill
-                if code==2:
-                    POT=POT+refill
-                if code==3:
-                    MOS=MOS+refill
-                if code=='OK':
-                    adm=int(input('press 1 to show stock // press 2 to restock '))
+            a = int(input(" 1 to add stocks,2 to display and 3 to exit administration:"))
+            if a==1:
+                Itms= input("Enter the item")
+                qunty= int(input("Enter the quantity of te item:"))
+                amt= int(input("Enter the price of  a single item:"))
+                total= qunty*amt
+                if Itms not in T:
+                    itmcode=x
+                    x+=1
                     
-                    break
-            if adm==3:
+                    
+                print("Itemcode:",itmcode)
+                T[itmcode]= {"Name":Itms,"Quantity":qunty,"Price":amt}
+                 
+            if a == 2:
+                f= int(input("Enter 1 to see a particular item otherwise press any other number:"))
+                if f== 1:
+                    itm = int(input("Enter the itemcode:"))
+                    print(T[itm])
+                    
                 
+                elif f != 1:
+                    print(T)
+                    
+                    
+            if a ==3:
+                print('Exiting Admininstrator...')
                 break
+                      
+        
+
+    if choice == 2:
+        #see and correct below code
+        #niche ek billing system banao jisme mujhe T wale tuple se ek Tuple T[itemcode] wala uthana hai , usmein se uski PRICE ki value jankr(access krke) quantity(billing me input hone wali) ko multiply krke total banana hai .
+        #usko ek loop me ghumado taki multiple item ki billing ek sath ho ske, aur last me total print krdo  
+        
+        while True:
+            type=int(input("enter 1 to continue billing , 2 to show bill and exit"))
+            
+            if type==1:
+                total=0
+                #billing procedure
+                billitm=int(input("enter item code"))
+                qnt=int(input('Enter quantity'))
                 
+                for amt in T[billitm]:
+                    
+                    c=amt*qnt
+                    total=total+c
+
+            if type==2:
+                print(total)
+                break
+                    
+                    
+                
+                
+
+
+
+
+
+        
+        #Delete below line
+        print('Bill')
+        print(total)
+        #Deleteaboveline
